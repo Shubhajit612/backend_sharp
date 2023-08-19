@@ -19,7 +19,7 @@ if(url === '/'){
             );
 
         res.write('</html>');
-        return res.end();
+         return res.end();
       
     });
   
@@ -42,12 +42,14 @@ else if(url === '/message' && method === 'POST'){
             }
             res.statusCode = 302;
             res.setHeader('Location','/');
-            return res.end();
+             return res.end();
         });
     });
   
+    
 }
-else {res.setHeader('Content-Type','text/html');
+else {
+res.setHeader('Content-Type','text/html');
 res.write('<html>');
 res.write('<head><title>First Page</title></head>');
 res.write('<body><h1>Hello My name is Shubhajit</h1></body>')
@@ -62,9 +64,9 @@ res.end();
 //     someText : "Hello Shubhajit How are you"
 // };
 
-module.exports.handler = requestHandler;
-module.exports.someText =  "Hello Shubhajit How are you";
+// module.exports.handler = requestHandler;
+// module.exports.someText =  "Hello Shubhajit How are you";
 
 
-// exports.handler = requestHandler;
-// exports.someText =  "Hello Shubhajit How are you";
+exports.handler = requestHandler;
+exports.someText =  "Hello Shubhajit How are you";
