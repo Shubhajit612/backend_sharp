@@ -1,9 +1,27 @@
-const http = require('http');
+// const http = require('http');
 
-const routes = require('./routes');
+const express = require('express');
+
+const app = express();
+
+app.use((req,res,next)=>{
+    console.log("Shubhajit ");
+    next();
+});
 
 
-let server = http.createServer(routes.handler);
+app.use((req,res,next)=>{
+    console.log("Sejuti ");
+    res.send({key1:"value"});
+});
 
-console.log(routes.someText);
-server.listen(4000);
+
+
+
+
+// let server = http.createServer(app);
+
+
+// server.listen(4000);
+
+app.listen(4000);
